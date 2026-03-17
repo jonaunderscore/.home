@@ -21,7 +21,7 @@
         blink-rate = 750;
       };
       mouse.hide-when-typing = true;
-      colors = {
+      colors-dark = {
         cursor = "161821 c6c8d1";
         foreground = "c6c8d1";
         background = "161821";
