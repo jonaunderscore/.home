@@ -126,8 +126,10 @@
         "browser.urlbar.suggest.openpage" = false;
         "browser.urlbar.suggest.quickactions" = false;
         "browser.urlbar.suggest.recentsearches" = false;
+        "browser.urlbar.suggest.sports" = false;
         "browser.urlbar.suggest.topsites" = false;
         "browser.urlbar.suggest.trending" = false;
+        "browser.urlbar.suggest.weather" = false;
         "browser.warnOnQuit" = false;
         "browser.warnOnQuitShortcut" = false;
         "extensions.activeThemeID" = "{11987003-9435-4f9d-919e-8720ebb6a64b}";
