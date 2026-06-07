@@ -18,32 +18,12 @@ in {
         declare -ax PROMPT_COMMAND=()
       '')
       (lib.mkOrder 3000 ''
-        . "${complete-alias}/complete_alias"
+        . '${complete-alias}/complete_alias'
         complete -F _complete_alias "''${!BASH_ALIASES[@]}"
-
-        _set_prompt_contents() {
-          PS1="\[\033[1;$((UID ? 32 : 31))m\]\\$"
-          ((SHLVL - 1)) && PS1="$PS1\[\033[22;37m\]+"
-          ((DIRENV_ACTIVE)) && PS1="$PS1\[\033[22;37m\]*"
-          PS1="$PS1 "
-
-          local git_dir
-          if git_dir="$(git rev-parse --show-toplevel 2>/dev/null)"; then
-            local git_branch="$(git branch --show-current 2>/dev/null)"
-            PS1="$PS1\[\033[1;37m\]''${PWD/#''${git_dir%/*}/…} "
-            PS1="$PS1\[\033[1;35m\]$git_branch "
-          else
-            PS1="$PS1\[\033[1;37m\]\w "
-          fi
-
-          local exit_status_indicator="\[\033[22;$((previous_exit_status ? 31 : 90))m\]•"
-          PS1="$PS1$exit_status_indicator \[\033[0m\]"
-          PS2="$exit_status_indicator \[\033[0m\]"
-        }
 
         _osc7_cwd() {
           local strlen=''${#PWD}
-          local encoded=""
+          local encoded=
           local pos c o
           for (( pos=0; pos<strlen; pos++ )); do
             c=''${PWD:$pos:1}
@@ -56,14 +36,38 @@ in {
           printf '\e]7;file://%s%s\e\\' "$HOSTNAME" "$encoded"
         }
 
+        _set_prompt_contents() {
+          PS0=
+          PS1="\[\033[1;$((UID ? 32 : 31))m\]\\$"
+          PS2=
+          PS3='#? '
+          PS4='+ '
+
+          ((SHLVL - 1)) && PS1+='\[\033[22;37m\]+'
+          ((DIRENV_ACTIVE)) && PS1+='\[\033[22;37m\]*'
+          PS1+=' '
+
+          local git_dir
+          if git_dir="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+            local git_branch="$(git branch --show-current 2>/dev/null)"
+            PS1+="\[\033[1;37m\]''${PWD/#''${git_dir%/*}/…} \[\033[1;35m\]$git_branch "
+          else
+            PS1+='\[\033[1;37m\]\w '
+          fi
+
+          local exit_status_indicator="\[\033[22;$((previous_exit_status ? 31 : 90))m\]•"
+          PS1+="$exit_status_indicator \[\033[0m\]"
+          PS2+="$exit_status_indicator \[\033[0m\]"
+        }
+
         _prompt_hook() {
           local previous_exit_status=$?
           history -a
-          _set_prompt_contents
-          PS1+='\[\e]0;\w\a\]'
           _osc7_cwd
-          PS0+='\e]133;C\e\\'
           printf '\e]133;A\e\\\e]133;D\e\\'
+          _set_prompt_contents
+          PS0+='\e]133;C\e\\'
+          PS1+='\[\e]0;\w\a\]'
           return $previous_exit_status
         }
 
