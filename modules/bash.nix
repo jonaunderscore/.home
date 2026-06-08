@@ -54,7 +54,7 @@ in {
             if [[ "$git_branch" != 'HEAD' ]]; then
               PS1+="\[\033[1;35m\]$git_branch "
             else
-              PS1+="\[\033[1;36m\]$(git rev-parse --short HEAD) "
+              PS1+="\[\033[1;33m\]$(git rev-parse --short HEAD) "
             fi
           else
             PS1+='\[\033[1;37m\]\w '
