@@ -92,6 +92,13 @@
 
   xdg = {
     enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/x-terminal-emulator" = "foot.desktop";
+        "x-scheme-handler/terminal" = "foot.desktop";
+      };
+    };
     terminal-exec = {
       enable = true;
       settings.default = [ "foot.desktop" ];
