@@ -92,10 +92,16 @@
 
   xdg = {
     enable = true;
+    configFile."cosmic-mimeapps.list".source = config.xdg.configFile."mimeapps.list".source;
     mimeApps = {
       enable = true;
       defaultApplications = {
         "application/x-terminal-emulator" = "foot.desktop";
+        "application/xhtml+xml" = "firefox.desktop";
+        "text/html" = "firefox.desktop";
+        "x-scheme-handler/chrome" = "firefox.desktop";
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
         "x-scheme-handler/terminal" = "foot.desktop";
       };
     };
