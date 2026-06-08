@@ -20,7 +20,7 @@
       dotfiles = with config.home; "git --git-dir=${homeDirectory}/.dotfiles --work-tree=${homeDirectory}";
       grep = "grep --color=auto";
       la = "ls -a";
-      ll = "ls -al";
+      ll = "la -l";
       ls = "ls --color=auto --human-readable";
       neofetch = "fastfetch";
     };
