@@ -49,8 +49,13 @@ in {
 
           local git_dir
           if git_dir="$(git rev-parse --show-toplevel 2>/dev/null)"; then
-            local git_branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
-            PS1+="\[\033[1;37m\]''${PWD/#''${git_dir%/*}/…} \[\033[1;35m\]$git_branch "
+            PS1+="\[\033[1;37m\]''${PWD/#''${git_dir%/*}/…} "
+            local git_branch="$(git rev-parse --abbrev-ref HEAD)"
+            if [[ "$git_branch" != 'HEAD' ]]; then
+              PS1+="\[\033[1;35m\]$git_branch "
+            else
+              PS1+="\[\033[1;33m\]$(git rev-parse --short HEAD) "
+            fi
           else
             PS1+='\[\033[1;37m\]\w '
           fi
