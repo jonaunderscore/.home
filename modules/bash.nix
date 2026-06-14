@@ -89,5 +89,12 @@ in {
         trap _debug_set_title DEBUG
       '')
     ];
+    shellOptions = [
+      "checkjobs"
+      "dotglob"
+      "extglob"
+      "globstar"
+      "histappend"
+    ];
   };
 }
