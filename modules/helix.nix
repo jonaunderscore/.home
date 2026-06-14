@@ -13,6 +13,7 @@
           normal = "block";
           select = "block";
         };
+        file-picker.deduplicate-links = false;
         inline-diagnostics = {
           cursor-line = "hint";
           max-wrap = 0;
