@@ -57,6 +57,7 @@
     };
     discord.enable = true;
     fastfetch.enable = true;
+    fd.enable = true;
     home-manager = {
       enable = true;
       path = "${home-manager}";
