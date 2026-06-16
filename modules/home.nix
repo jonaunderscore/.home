@@ -27,7 +27,6 @@
   };
 
   nix = {
-    package = pkgs.nix;
     channels = { inherit nixpkgs; };
     gc = {
       automatic = true;
