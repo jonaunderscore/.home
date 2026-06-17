@@ -99,8 +99,8 @@
       };
       SearchBar = "unified";
       SearchEngines = {
-        Default = "DuckDuckGo";
-        DefaultPrivate = "DuckDuckGo";
+        Default = "Google";
+        DefaultPrivate = "Google";
         PreventInstalls = true;
       };
       SearchSuggestEnabled = true;
