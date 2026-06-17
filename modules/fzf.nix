@@ -38,6 +38,6 @@
     ];
     fileWidgetCommand = "find -L . -mindepth 1 -path '*/.*' -prune -o -type d -printf '%P/\\n' -o -not -type d -printf '%P\\n' 2>/dev/null";
     fileWidgetOptions = [ "--height=~12" ];
-    historyWidgetOptions = [ "--height=~12" ];
+    historyWidgetOptions = [ "--height=~12" "--no-multi" ];
   };
 }
