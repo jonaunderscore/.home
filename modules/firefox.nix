@@ -117,6 +117,7 @@
         "browser.ml.linkPreview.enabled" = false;
         "browser.ml.pageAssist.enabled" = false;
         "browser.ml.smartAssist.enabled" = false;
+        "browser.newtabpage.activity-stream.widgets.enabled" = false;
         "browser.preferences.moreFromMozilla" = false;
         "browser.sessionstore.resume_from_crash" = false;
         "browser.startup.couldRestoreSession.count" = 0;
