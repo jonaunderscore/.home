@@ -9,6 +9,7 @@
       pulsemixer
       spotify
       tree
+      wget
       wl-clipboard
     ];
     sessionVariables = {
