@@ -9,7 +9,7 @@ let
 in {
   programs.bash = {
     enable = true;
-    historyControl = [ "erasedups" "ignoredups" ];
+    historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historyFileSize = -1;
     historySize = -1;
     initExtra = lib.mkMerge [
