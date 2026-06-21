@@ -95,6 +95,7 @@ in {
       "extglob"
       "globstar"
       "histappend"
+      "nullglob"
     ];
   };
 }
