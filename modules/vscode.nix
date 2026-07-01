@@ -38,7 +38,7 @@
         "editor.suggest.showWords" = false;
         "explorer.confirmDelete" = false;
         "explorer.decorations.colors" = false;
-        "extensions.autoUpdate" = "on";
+        "extensions.autoUpdate" = "off";
         "extensions.ignoreRecommendations" = true;
         "files.insertFinalNewline" = true;
         "git.openRepositoryInParentFolders" = "always";
