@@ -122,7 +122,7 @@
       "ui.virtual.wrap" = "match-bg";
       "ui.virtual.jump-label" = { fg = "bright-fg"; modifiers = [ "bold" ]; };
       "ui.menu" = { bg = "dim-bg"; fg = "normal-fg"; };
-      "ui.menu.selected" = { bg = "selected-bg"; fg = "bright-fg"; };
+      "ui.menu.selected" = { bg = "selected-bg"; fg = "bright-fg"; modifiers = [ "bold" ]; };
       "ui.selection".bg = "selection-bg";
       "ui.highlight".bg = "bright-bg";
       "ui.cursorline.primary".bg = "bright-bg";
