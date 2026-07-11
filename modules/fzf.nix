@@ -25,8 +25,10 @@
       "label" = "#c6c8d1";
       "query" = "#c6c8d1";
     };
-    changeDirWidgetCommand = "find -L . -mindepth 1 -path '*/.*' -prune -o -type d -printf '%P/\\n' 2>/dev/null";
-    changeDirWidgetOptions = [ "--height=~12" ];
+    changeDirWidget = {
+      command = "find -L . -mindepth 1 -path '*/.*' -prune -o -type d -printf '%P/\\n' 2>/dev/null";
+      options = [ "--height=~12" ];
+    };
     defaultCommand = "find -L . -mindepth 1 -path '*/.*' -prune -o -not -type d -printf '%P\\n' 2>/dev/null";
     defaultOptions = [
       "--bind=tab:toggle+down,shift-tab:toggle+up"
@@ -36,8 +38,10 @@
       "--preview-border=sharp"
       "--scroll-off=3"
     ];
-    fileWidgetCommand = "find -L . -mindepth 1 -path '*/.*' -prune -o -type d -printf '%P/\\n' -o -not -type d -printf '%P\\n' 2>/dev/null";
-    fileWidgetOptions = [ "--height=~12" ];
-    historyWidgetOptions = [ "--height=~12" "--no-multi" ];
+    fileWidget = {
+      command = "find -L . -mindepth 1 -path '*/.*' -prune -o -type d -printf '%P/\\n' -o -not -type d -printf '%P\\n' 2>/dev/null";
+      options = [ "--height=~12" ];
+    };
+    historyWidget.options = [ "--height=~12" "--no-multi" ];
   };
 }
