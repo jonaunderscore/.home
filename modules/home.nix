@@ -23,7 +23,6 @@
       la = "ls -a";
       ll = "la -l";
       ls = "ls --color=auto --human-readable";
-      neofetch = "fastfetch";
     };
   };
 
