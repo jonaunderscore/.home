@@ -13,6 +13,7 @@
       wl-clipboard
     ];
     sessionVariables = {
+      BROWSER = "firefox";
       EDITOR = "hx";
       TERMINAL = "foot";
     };
