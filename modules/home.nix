@@ -82,6 +82,7 @@
       };
     };
     ripgrep.enable = true;
+    zathura.enable = true;
   };
 
   services = {
