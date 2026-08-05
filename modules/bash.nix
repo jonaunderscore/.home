@@ -68,11 +68,11 @@ in {
         _prompt_hook() {
           local previous_exit_status=$?
           history -a
-          _osc7_cwd
-          printf '\e]133;A\e\\\e]133;D\e\\'
           _set_prompt_contents
           PS0+='\e]133;C\e\\'
           PS1+='\[\e]0;\w\a\]'
+          _osc7_cwd
+          printf '\e]133;A\e\\\e]133;D\e\\'
           return $previous_exit_status
         }
 
