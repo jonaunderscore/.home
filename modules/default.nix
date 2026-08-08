@@ -6,4 +6,4 @@
       stateVersion = "25.11";
     };
   }
-] ++ self.lib.importNixFilesWithArgsRecursive inputs ./.
+] ++ self.lib.importNixFilesWithArgs inputs ./.
