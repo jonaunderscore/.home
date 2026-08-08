@@ -43,6 +43,7 @@
         bright7 = "d2d4de";
         selection-background = "272c42";
       };
+      key-bindings.fullscreen = "F11";
     };
   };
 }
