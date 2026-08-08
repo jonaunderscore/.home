@@ -57,6 +57,7 @@
       '';
     };
     discord.enable = true;
+    emacs.enable = true;
     fastfetch.enable = true;
     fd.enable = true;
     home-manager = {
@@ -74,6 +75,7 @@
         RAW-CONTROL-CHARS = true;
       };
     };
+    mpv.enable = true;
     readline = {
       enable = true;
       variables = {
