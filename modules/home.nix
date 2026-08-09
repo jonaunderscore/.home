@@ -6,6 +6,7 @@
     language.collate = "C.UTF-8";
     packages = with pkgs; [
       nix
+      nixd
       pulsemixer
       spotify
       tree
