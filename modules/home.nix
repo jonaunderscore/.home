@@ -7,6 +7,7 @@
     packages = with pkgs; [
       nix
       nixd
+      nixfmt
       pulsemixer
       spotify
       tree
