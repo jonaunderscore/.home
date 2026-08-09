@@ -91,12 +91,12 @@ in rec {
       then /. + file_reg
       else null;
 
-  getCanonNixFileName = path:
+  getNixFileName = path:
     if hasDefaultNix path
     then baseNameOf path
     else getFilenameWithoutExtension path;
 
-  getRelativeCanonNixPath = base_path: path:
+  getRelativeNixPath = base_path: path:
     let
       base_path' = (toString (/. + base_path)) + (
         if /. + base_path != /. then "/" else ""
@@ -112,7 +112,7 @@ in rec {
             base_path_length
             (path_length - base_path_length - stringLength (baseNameOf path))
             path'
-          ) + getCanonNixFileName path
+          ) + getNixFileName path
         else ""
       ));
 
@@ -168,7 +168,7 @@ in rec {
 
   getNixFiles' = path:
     listToAttrs (map (path:
-      { name = getCanonNixFileName path; value = path; }
+      { name = getNixFileName path; value = path; }
     ) (getNixFiles path));
 
   getNixFilesRecursive = path:
@@ -176,7 +176,7 @@ in rec {
 
   getNixFilesRecursive' = path:
     listToAttrs (map (path':
-      { name = getRelativeCanonNixPath path path'; value = path'; }
+      { name = getRelativeNixPath path path'; value = path'; }
     ) (getNixFilesRecursive path));
 
   getNixFilesRecursive'' = path:
