@@ -34,6 +34,7 @@
       recolor-darkcolor = "#c6c8d1";
       recolor-keephue = true;
       recolor-lightcolor = "#161821";
+      selection-clipboard = "clipboard";
       selection-notification = false;
       statusbar-home-tilde = true;
       window-title-home-tilde = true;
