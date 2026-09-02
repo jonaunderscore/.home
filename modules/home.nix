@@ -60,7 +60,6 @@
       '';
     };
     discord.enable = true;
-    emacs.enable = true;
     fastfetch.enable = true;
     fd.enable = true;
     home-manager = {
