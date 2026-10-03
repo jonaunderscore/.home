@@ -3,11 +3,9 @@
     enable = true;
     configPath = ".mozilla/firefox";
     policies = {
-      AIControls = {
-        Default = {
-          Value = "blocked";
-          Locked = true;
-        };
+      AIControls.Default = {
+        Value = "blocked";
+        Locked = true;
       };
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
