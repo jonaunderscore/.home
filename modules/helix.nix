@@ -20,6 +20,7 @@
         };
         line-number = "relative";
         lsp = {
+          enable = false;
           auto-signature-help = false;
           display-color-swatches = false;
         };
