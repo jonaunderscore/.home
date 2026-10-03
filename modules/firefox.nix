@@ -3,6 +3,12 @@
     enable = true;
     configPath = ".mozilla/firefox";
     policies = {
+      AIControls = {
+        Default = {
+          Value = "blocked";
+          Locked = true;
+        };
+      };
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
       DisableAppUpdate = true;
