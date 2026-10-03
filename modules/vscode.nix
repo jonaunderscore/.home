@@ -4,7 +4,6 @@
     enable = false;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        jnoortheen.nix-ide
         mkhl.direnv
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
